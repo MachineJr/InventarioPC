@@ -14,7 +14,6 @@ sistema = platform.system() + " " + platform.release()
 # RAM física instalada (en GB)
 ram = round(psutil.virtual_memory().total / (1024 ** 3), 2)
 
-
 c = wmi.WMI()
 procesador = c.Win32_Processor()[0]
 descripcion_procesador = f"{procesador.Name}, {procesador.MaxClockSpeed} MHz, {procesador.NumberOfCores} núcleos, {procesador.NumberOfLogicalProcessors} hilos"
