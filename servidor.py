@@ -77,6 +77,8 @@ def ver_equipos():
     conn.close()
     return render_template('index.html', equipos=equipos)
 
+import os
+
 if __name__ == '__main__':
-    # Ejecutar en puerto 5050 si 5000 da error
-    app.run(debug=True, port=5050)
+    port = int(os.environ.get('PORT', 5050))  # Render asigna automáticamente el puerto
+    app.run(host='0.0.0.0', port=port, debug=True)
